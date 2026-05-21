@@ -1,0 +1,1 @@
+# extraccion de datos del cv en texto

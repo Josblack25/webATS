@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:16-alpine # Versión estable, ligera y optimizada
+    container_name: webats_postgres_dev
+    restart: always
+    environment:
+      POSTGRES_USER: adonis_developer
+      POSTGRES_PASSWORD: tu_password_seguro # 🔐 Cambia esto por una clave propia
+      POSTGRES_DB: webats_db
+    ports:
+      - "5432:5432" # Mapea el puerto del contenedor al de tu Ubuntu
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persistencia de datos para no perder nada al apagarlo
+
+volumes:
+  postgres_data: # Define el volumen independiente en tu disco
